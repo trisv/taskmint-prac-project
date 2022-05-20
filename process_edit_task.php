@@ -1,0 +1,34 @@
+<?php session_start();
+//require all the necessary files - db for connection, functions for functions and task class
+require 'db.php';
+require 'functions.php';
+require './classes/task.class.php';
+
+if(!userLoggedIn()){
+    redirect('login.php');
+  }
+
+//check if post type is submit
+if(isset($_POST['submit'])) {
+    //if nothing was posted, send back to signup.php
+    die(Header('Location: index.php'));
+}
+
+//create new class instance
+$task_edit_instance = new tasks($pdo);
+//set user and task ids
+$task_edit_instance->setU_ID($_SESSION['u_id']);
+$task_edit_instance->setTaskID($_POST['task_id']);
+//set POST variables 
+$task_edit_instance->setTaskName($_POST['task_name']);
+$task_edit_instance->setTaskDetails($_POST['task_details']);
+m($task_edit_instance);
+//create variable to edit task
+$action_edit_task = $task_edit_instance->editTask();
+if(!$action_edit_task) {
+  echo "Edit failed";
+  //in professional setting, would redirect back to index.php if failed
+  //redirect('index.php');
+}
+//m($action_edit_task);
+redirect('index.php');
