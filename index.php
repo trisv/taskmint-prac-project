@@ -20,9 +20,9 @@ if(!userLoggedIn()){
       <a href='logout.php'>Logout</a>
     </div>
   </div>
-  <div class="row-2" style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+  <div class="row-2" style="display:flex;justify-content:flex-start;align-items:flex-start;gap:10px;">
     <div class="task-form-container">
-      <form class="task-form" action="process_task.php" method='POST'style="display:flex;width:300px;">
+      <form class="task-form" action="process_task.php" method='POST'style="display:flex;min-width:175px;min-height:175px;padding:30px;background-color:#95a3b3;">
         <h3>Add Tasks</h3>
         <input type="text" name="task_name" placeholder="Enter task name" required autofocus >
         <input type="text" name="task_details" placeholder="Enter task details" required >
@@ -38,12 +38,12 @@ if(!userLoggedIn()){
       //echo tasks viewTasks method to view tasks in database
         $myTasks = $tasks_list->viewTasks();
         ?>
-      
-      <h2>Test display area</h2>
-      <div class="task-display" style="display:flex;gap:10px;justify-content:flex-start;flex-wrap:wrap;padding:30px;background-color:#95a3b3;border-radius:10px;">
+
+      <div class="task-display" style="display:flex;min-width:175px;min-height:175px;gap:10px;justify-content:flex-start;flex-wrap:wrap;padding:10px;background-color:#95a3b3;border-radius:10px;">
         <?php
+        if(!empty($myTasks)) {
           foreach($myTasks as $task_item) {
-            echo "<div style='display:flex;flex-direction:column;width:175px;height:175px;background-color:#fff;padding:30px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);border-radius:10px;'>";
+            echo "<div style='display:flex;flex-direction:column;min-width:175px;min-height:175px;background-color:#fff;padding:25px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);border-radius:10px;'>";
             //echo "<strong>Task ID:</strong> " . $task_item['task_id'] . "<br>";
             echo "<br>";
             echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $task_item['task_id'] . "'>" . $task_item['task_name'] . '</a><br>';
@@ -53,6 +53,9 @@ if(!userLoggedIn()){
             echo "<a href='edit_task.php?task_id=" . $task_item['task_id'] . "' style='color:blue;'>" . "Edit" . "</a>";
             echo "</div>";
           }
+        } else {
+          echo "no Tasks";
+        }
         ?>
       
       </div>

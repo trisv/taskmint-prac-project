@@ -73,12 +73,16 @@ class tasks {
 
     function createTask() {
         try {
+            //set variables manually to avoid notice issue
+            $task_name=$this->getTaskName();
+            $task_details=$this->getTaskDetails();
+            $task_date_added=$this->getTaskDateAdded();
             $sql = 'INSERT INTO tasks (u_id, task_name, task_details, task_date_added) VALUES (:u_id, :task_name, :task_details, :task_date_added)';
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':u_id', $_SESSION['u_id']);
-            $stmt->bindParam(':task_name', $this->getTaskName());
-            $stmt->bindParam(':task_details', $this->getTaskDetails());
-            $stmt->bindParam(':task_date_added', $this->getTaskDateAdded());
+            $stmt->bindParam(':task_name', /*$this->getTaskName()*/ $task_name);
+            $stmt->bindParam(':task_details', /*$this->getTaskDetails()*/$task_details);
+            $stmt->bindParam(':task_date_added', /*$this->getTaskDateAdded()*/$task_date_added);
             $stmt->execute();
         
         } catch(PDOException $e) {
@@ -93,7 +97,7 @@ class tasks {
     function viewTasks() {
         //query to access database
         $sql = $this->pdo->prepare('SELECT * FROM tasks WHERE u_id = :u_id');
-        $sql->bindParam(':u_id', $this->getU_ID());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
         $sql->execute();
         //fetching the result
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -105,7 +109,7 @@ class tasks {
     function viewTaskID() {
         //query to access database
         $sql = $this->pdo->prepare('SELECT task_id FROM tasks WHERE u_id = :u_id');
-        $sql->bindParam(':u_id', $this->getU_ID());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
         $sql->execute();
         //fetching the result
         $result = $sql->fetch(PDO::FETCH_ASSOC);
@@ -117,7 +121,7 @@ class tasks {
     function viewTaskName() {
         //query to access database
         $sql = $this->pdo->prepare('SELECT task_name FROM tasks WHERE u_id = :u_id');
-        $sql->bindParam(':u_id', $this->getU_ID());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
         $sql->execute();
         //fetching the result
         $result = $sql->fetch(PDO::FETCH_ASSOC);
@@ -129,7 +133,7 @@ class tasks {
     function viewTaskDetails() {
         //query to access database
         $sql = $this->pdo->prepare('SELECT task_details FROM tasks WHERE u_id = :u_id');
-        $sql->bindParam(':u_id', $this->getU_ID());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
         $sql->execute();
         //fetching the result
         $result = $sql->fetch(PDO::FETCH_ASSOC);
@@ -141,7 +145,7 @@ class tasks {
     function viewTaskDateAdded() {
         //query to access database
         $sql = $this->pdo->prepare('SELECT task_date_added FROM tasks WHERE u_id = :u_id');
-        $sql->bindParam(':u_id', $this->getU_ID());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
         $sql->execute();
         //fetching the result
         $result = $sql->fetch(PDO::FETCH_ASSOC);
@@ -151,13 +155,15 @@ class tasks {
     }
 //this works much better without fetchAll
     function viewTaskSingle() {
+        //set task id to avoid notice issue
+        $task_id = $this->getTaskID();
         $sql = $this->pdo->prepare('SELECT * FROM tasks WHERE u_id = :u_id AND task_id = :task_id LIMIT 1');
-        $sql->bindParam(':u_id', $this->getU_ID());
-        $sql->bindParam(':task_id', $this->getTaskID());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/ $_SESSION['u_id']);
+        $sql->bindParam(':task_id', /*$this->getTaskID()*/$task_id);
         if(!$sql->execute()) {
             return false;
         }
-        
+
         //fetching the result
         $result = $sql->fetch(PDO::FETCH_ASSOC);
         if(empty($result)){
@@ -168,19 +174,25 @@ class tasks {
     }
 
     function deleteTask() {
+        //set task id to avoid notice issue
+        $task_id = $this->getTaskID();
         $sql = $this->pdo->prepare('DELETE FROM tasks WHERE u_id = :u_id AND task_id = :task_id LIMIT 1');
-        $sql->bindParam(':u_id', $this->getU_ID());
-        $sql->bindParam(':task_id', $this->getTaskID());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
+        $sql->bindParam(':task_id', /*$this->getTaskID()*/$task_id);
         $sql->execute();
       
     }
 
     function editTask() {
+        //set task id, task name and task details manually to avoid notice issue
+        $task_id = $this->getTaskID();
+        $task_name = $this->getTaskName();
+        $task_details = $this->getTaskDetails();
         $sql = $this->pdo->prepare('UPDATE tasks SET task_name = :task_name, task_details = :task_details WHERE u_id = :u_id AND task_id = :task_id');
-        $sql->bindParam(':u_id', $this->getU_ID());
-        $sql->bindParam(':task_id', $this->getTaskID());
-        $sql->bindParam(':task_name', $this->getTaskName());
-        $sql->bindParam(':task_details', $this->getTaskDetails());
+        $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
+        $sql->bindParam(':task_id', /*$this->getTaskID()*/$task_id);
+        $sql->bindParam(':task_name', /*$this->getTaskName()*/$task_name);
+        $sql->bindParam(':task_details', /*$this->getTaskDetails()*/$task_details);
         if(!$sql->execute()){
             return false;
         }
