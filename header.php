@@ -5,12 +5,13 @@
 <html>
 <head>
   <link href="./resources/css/style.css" type="text/css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div class="header">
-  <p>CoolMint</p>  
+  <p>TaskMint</p>  
   <ul class="nav">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Join</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="signup.php">Join</a></li>
   </ul>
   </div>

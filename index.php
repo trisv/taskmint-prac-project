@@ -12,7 +12,7 @@ if(!userLoggedIn()){
  ?>
 
 <div class="main">
-  <div class="row-1" style="margin:10px auto;display:flex;justify-content:space-between;;padding:2.5rem;background-color:#95a3b3;border-radius:10px;">
+  <div class="row-1" style="margin:10px auto;display:flex;justify-content:space-between;;padding:2.5rem;background-color:#95a3b3;">
     <div class="welcome-bar" style="color:white;">
       <?php echo 'hello ' . "<strong>" . $_SESSION['username'] . "</strong>"; ?>
     </div>
@@ -21,15 +21,15 @@ if(!userLoggedIn()){
     </div>
   </div>
   <div class="row-2" style="display:flex;justify-content:flex-start;align-items:flex-start;gap:10px;">
-    <div class="task-form-container">
-      <form class="task-form" action="process_task.php" method='POST'style="display:flex;min-width:175px;min-height:175px;padding:30px;background-color:#95a3b3;">
+    <div class="task-form-container" style="width:20%;">
+      <form class="task-form" action="process_task.php" method='POST'style="display:flex;min-width:175pxmin-height:175px;padding:30px;background-color:#95a3b3;">
         <h3>Add Tasks</h3>
         <input type="text" name="task_name" placeholder="Enter task name" required autofocus >
         <input type="text" name="task_details" placeholder="Enter task details" required >
         <input type="submit" style="cursor:pointer;">
       </form>
     </div>
-    <div class="tasks-display-container">
+    <div class="tasks-display-container" style="width:80%;">
       <?php 
       //set new class instance 
       $tasks_list = new tasks($pdo);
@@ -39,11 +39,11 @@ if(!userLoggedIn()){
         $myTasks = $tasks_list->viewTasks();
         ?>
 
-      <div class="task-display" style="display:flex;min-width:175px;min-height:175px;gap:10px;justify-content:flex-start;flex-wrap:wrap;padding:10px;background-color:#95a3b3;border-radius:10px;">
+      <div class="task-display" style="display:flex;min-height:175px;gap:10px;justify-content:flex-start;flex-wrap:wrap;padding:10px;background-image:linear-gradient(35deg, #38a3a5, #b8f2e6);">
         <?php
         if(!empty($myTasks)) {
           foreach($myTasks as $task_item) {
-            echo "<div style='display:flex;flex-direction:column;min-width:175px;min-height:175px;background-color:#fff;padding:25px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);border-radius:10px;'>";
+            echo "<div style='display:flex;flex-direction:column;max-width:20%;min-height:175px;background-color:#fff;padding:25px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);border-radius:2px;'>";
             //echo "<strong>Task ID:</strong> " . $task_item['task_id'] . "<br>";
             echo "<br>";
             echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $task_item['task_id'] . "'>" . $task_item['task_name'] . '</a><br>';

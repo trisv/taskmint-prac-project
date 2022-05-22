@@ -36,11 +36,16 @@ html {
   color: #222222;
 }
 
+body {
+  margin:0;
+}
+
 .header {
   display:flex;
   justify-content: space-between;
-  padding: 10px 50px;
+  padding: 10px 15px;
   background-color: #84dcc6;
+
 }
 
 .header .nav {
@@ -76,7 +81,6 @@ form {
   display:flex;
   flex-direction: column;
   gap: 10px;
-  border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
