@@ -33,8 +33,8 @@ if(!$display_task_info){
 // var_dump($display_task_info = $display_task);
 
 // foreach($display_task_info as $task_info) {
-    echo "<div style='display:flex;justify-content:center;align-content:center;'>";
-    echo "<div style='width:275px;height:auto;background-color:#95a3b3;color:#fff;padding:30px;box-shadow:0 3px 10px rgb(0 0 0 / 0.2);border-radius:10px;'>";
+    echo "<div class='task-overview-container'>";
+    echo "<div class='task-overview-box'>";
     echo "<strong>Task ID:</strong> " . $display_task_info['task_id'] . "<br>";
     echo "<strong>Task Name:</strong> " . $display_task_info['task_name'] . '<br>';
     echo "<strong>Task Details:</strong> " . $display_task_info['task_details'] . "<br>";

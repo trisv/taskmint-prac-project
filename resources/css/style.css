@@ -108,7 +108,7 @@ form input[type="submit"] {
   margin-top: 10px;
   border-radius: 3px;
   border:none;
-  background-color:#4b4e6d;
+  background-color:#38a3a5;
   color:#fff;
 }
 
@@ -118,4 +118,120 @@ form input[type="submit"]:hover {
   transition: ease-in-out;
   background-color: #84dcc6;
   color:#222222;
+}
+
+.row-1 {
+  margin:10px auto;
+  display:flex;
+  justify-content:space-between;
+  padding:2.5rem;
+  background-color:#95a3b3;
+}
+
+.welcome-bar {
+  color:#fff;
+}
+
+.row-2 {
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.task-form-container {
+  width:20%;
+}
+
+.task-form {
+  display:flex;
+  min-width:175px;
+  min-height:175px;
+  padding:30px;
+  background-color:#95a3b3;
+}
+
+.tasks-display-container {
+  width:80%;
+  
+}
+
+.task-display {
+  display:flex;
+  min-height:175px;
+  gap:10px;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+  padding:10px;
+  background-image:linear-gradient(35deg, #38a3a5, #b8f2e6);
+}
+
+.task-box {
+  display:flex;
+  flex-direction:column;
+  width:20%;
+  max-height:175px;
+  background-color:#fff;
+  padding:25px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius:2px;
+}
+
+.delete-task-link {
+  color:white;
+  padding:10px;
+  border-radius: 2px;
+  text-decoration:none;
+  background-color: red;
+  width: 30%;
+  margin:2% 0;
+}
+
+.delete-task-link:hover {
+  color:red;
+  background-color: #f2f2f2;
+}
+
+.edit-task-link {
+  color:white;
+  padding:10px;
+  border-radius: 2px;
+  text-decoration:none;
+  background-color:blue;
+  width:30%;
+  margin: 2% 0;
+}
+
+.edit-task-link:hover {
+  color:blue;
+  background-color:#f2f2f2;
+}
+
+.task-overview-container {
+  display:flex;
+  justify-content:center;
+  align-content:center;
+}
+
+.task-overview-box {
+  width:275px;
+  height:auto;
+  background-color:#95a3b3;
+  color:#fff;
+  padding:30px;
+  box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius:10px;
+}
+
+.logout-link {
+  padding:10px;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #38a3a5;
+  text-decoration:none;
+}
+
+.logout-link:hover {
+  background-color: #38a3a5;
+  color: #fff;
 }

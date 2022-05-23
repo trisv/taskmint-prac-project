@@ -12,17 +12,17 @@ if(!userLoggedIn()){
  ?>
 
 <div class="main">
-  <div class="row-1" style="margin:10px auto;display:flex;justify-content:space-between;;padding:2.5rem;background-color:#95a3b3;">
-    <div class="welcome-bar" style="color:white;">
-      <?php echo 'hello ' . "<strong>" . $_SESSION['username'] . "</strong>"; ?>
+  <div class="row-1">
+    <div class="welcome-bar">
+      <?php echo 'Hello ' . "<strong>" . $_SESSION['username'] . "</strong>"; ?>
     </div>
     <div>
-      <a href='logout.php'>Logout</a>
+      <a class="logout-link"href='logout.php'>Logout</a>
     </div>
   </div>
-  <div class="row-2" style="display:flex;justify-content:flex-start;align-items:flex-start;gap:10px;">
-    <div class="task-form-container" style="width:20%;">
-      <form class="task-form" action="process_task.php" method='POST'style="display:flex;min-width:175pxmin-height:175px;padding:30px;background-color:#95a3b3;">
+  <div class="row-2">
+    <div class="task-form-container">
+      <form class="task-form" action="process_task.php" method='POST'>
         <h3>Add Tasks</h3>
         <input type="text" name="task_name" placeholder="Enter task name" required autofocus >
         <input type="text" name="task_details" placeholder="Enter task details" required >
@@ -39,18 +39,18 @@ if(!userLoggedIn()){
         $myTasks = $tasks_list->viewTasks();
         ?>
 
-      <div class="task-display" style="display:flex;min-height:175px;gap:10px;justify-content:flex-start;flex-wrap:wrap;padding:10px;background-image:linear-gradient(35deg, #38a3a5, #b8f2e6);">
+      <div class="task-display">
         <?php
         if(!empty($myTasks)) {
           foreach($myTasks as $task_item) {
-            echo "<div style='display:flex;flex-direction:column;max-width:20%;min-height:175px;background-color:#fff;padding:25px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);border-radius:2px;'>";
+            echo "<div class='task-box' style='display:flex;flex-direction:column;width:20%;max-height:175px;background-color:#fff;padding:25px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);border-radius:2px;'>";
             //echo "<strong>Task ID:</strong> " . $task_item['task_id'] . "<br>";
             echo "<br>";
             echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $task_item['task_id'] . "'>" . $task_item['task_name'] . '</a><br>';
             //echo "<strong>Task Details:</strong> " . $task_item['task_details'] . "<br>";
             //echo "<strong>Task Date Added:</strong> " . date("F j, Y, g:i a", $task_item['task_date_added']) . "<br>";
-            echo "<a href='process_delete_task.php?task_id=" . $task_item['task_id'] . "' style='color:red;'>" . "Delete" . "</a>";
-            echo "<a href='edit_task.php?task_id=" . $task_item['task_id'] . "' style='color:blue;'>" . "Edit" . "</a>";
+            echo "<a href='process_delete_task.php?task_id=" . $task_item['task_id'] . "' class = 'delete-task-link'>" . "Delete" . "</a>";
+            echo "<a href='edit_task.php?task_id=" . $task_item['task_id'] . "' class = 'edit-task-link'>" . "Edit" . "</a>";
             echo "</div>";
           }
         } else {
