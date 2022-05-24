@@ -39,7 +39,7 @@ class tasks {
     }
 
     function setTaskName($task_name) {
-        $this->task_name= $task_name;
+        $this->task_name=$task_name;
     }
     
     function getTaskName() {

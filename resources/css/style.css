@@ -43,9 +43,8 @@ body {
 .header {
   display:flex;
   justify-content: space-between;
-  padding: 10px 15px;
   background-color: #84dcc6;
-
+  padding: 15px 2.5rem;
 }
 
 .header .nav {
@@ -132,11 +131,42 @@ form input[type="submit"]:hover {
   color:#fff;
 }
 
+.welcome-summary {
+  display:flex;
+  flex-direction: column;
+}
+
+.welcome-username {
+  display:block;
+  
+}
+
+.edit-user-link {
+  color:white;
+  padding:10px;
+  border-radius: 2px;
+  text-decoration:none;
+  background-color:#2a9d8f;
+  margin: 2% 0;
+}
+
 .row-2 {
   display:flex;
   justify-content:flex-start;
   align-items:flex-start;
   gap:10px;
+}
+
+.user-form-container {
+  width:20%;
+}
+
+.user-form {
+  display:flex;
+  min-width:175px;
+  min-height:175px;
+  padding:28px;
+  background-color:#95a3b3;
 }
 
 .task-form-container {
@@ -147,7 +177,7 @@ form input[type="submit"]:hover {
   display:flex;
   min-width:175px;
   min-height:175px;
-  padding:30px;
+  padding:28px;
   background-color:#95a3b3;
 }
 
@@ -182,14 +212,14 @@ form input[type="submit"]:hover {
   padding:10px;
   border-radius: 2px;
   text-decoration:none;
-  background-color: red;
+  background-color: #264653;
   width: 30%;
   margin:2% 0;
 }
 
 .delete-task-link:hover {
-  color:red;
-  background-color: #f2f2f2;
+  color:#264653;
+  background-color: #edede9;
 }
 
 .edit-task-link {
@@ -197,24 +227,27 @@ form input[type="submit"]:hover {
   padding:10px;
   border-radius: 2px;
   text-decoration:none;
-  background-color:blue;
+  background-color:#2a9d8f;
   width:30%;
   margin: 2% 0;
 }
 
 .edit-task-link:hover {
-  color:blue;
-  background-color:#f2f2f2;
+  color:#2a9d8f;
+  background-color:#edede9;
 }
 
 .task-overview-container {
   display:flex;
   justify-content:center;
   align-content:center;
+  padding: 100px;
 }
 
 .task-overview-box {
-  width:275px;
+  display:flex;
+  flex-direction:column;
+  width:auto;
   height:auto;
   background-color:#95a3b3;
   color:#fff;

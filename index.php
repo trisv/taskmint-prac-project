@@ -14,7 +14,12 @@ if(!userLoggedIn()){
 <div class="main">
   <div class="row-1">
     <div class="welcome-bar">
-      <?php echo 'Hello ' . "<strong>" . $_SESSION['username'] . "</strong>"; ?>
+      <div class='welcome-summary'>
+        <div class='welcome-username'>
+          <?php echo 'Hello ' . "<strong>" . $_SESSION['username'] . "</strong>"; ?>
+        </div>
+        <a class="edit-user-link" href='edit_user.php'>Edit User Details</a>
+      </div>
     </div>
     <div>
       <a class="logout-link"href='logout.php'>Logout</a>
@@ -43,14 +48,14 @@ if(!userLoggedIn()){
         <?php
         if(!empty($myTasks)) {
           foreach($myTasks as $task_item) {
-            echo "<div class='task-box' style='display:flex;flex-direction:column;width:20%;max-height:175px;background-color:#fff;padding:25px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);border-radius:2px;'>";
+            echo "<div class='task-box'>";
             //echo "<strong>Task ID:</strong> " . $task_item['task_id'] . "<br>";
             echo "<br>";
             echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $task_item['task_id'] . "'>" . $task_item['task_name'] . '</a><br>';
             //echo "<strong>Task Details:</strong> " . $task_item['task_details'] . "<br>";
             //echo "<strong>Task Date Added:</strong> " . date("F j, Y, g:i a", $task_item['task_date_added']) . "<br>";
-            echo "<a href='process_delete_task.php?task_id=" . $task_item['task_id'] . "' class = 'delete-task-link'>" . "Delete" . "</a>";
             echo "<a href='edit_task.php?task_id=" . $task_item['task_id'] . "' class = 'edit-task-link'>" . "Edit" . "</a>";
+            echo "<a href='process_delete_task.php?task_id=" . $task_item['task_id'] . "' class = 'delete-task-link'>" . "Delete" . "</a>";
             echo "</div>";
           }
         } else {
