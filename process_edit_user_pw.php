@@ -20,17 +20,20 @@ $confirm_password = $_POST['confirm_password'];
 
 //create new users class instance
 $user_pw_edit_instance = new users($pdo);
-//set relevant variables using $_SESSION for user id and $_POST for variables coming from form
+//set relevant variables for class 
 $user_pw_edit_instance->setU_ID($_SESSION['u_id']);
 $user_pw_edit_instance->setPassword($_POST['u_password']);
+//bit of debugging
 m($user_pw_edit_instance);
-
+//db query to fetch pw to compare POST password against 
 $password_query = 'SELECT u_password FROM users WHERE u_id = :u_id';
 $stmt = $pdo->prepare($password_query);
 $stmt->bindParam('u_id', $_SESSION['u_id']);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+//little more debugging to ensure correct output from query
 m($result);
+//if no result, tell the user
 if(!$result) {
     echo "no result";
 }
@@ -48,7 +51,7 @@ $action_edit_user_pw = $user_pw_edit_instance->editPassword();
 if(!$action_edit_user_pw) {
      echo 'edit failed';
  }
-
+//if successful, redirect user to index.php page
 redirect('index.php');
 
 

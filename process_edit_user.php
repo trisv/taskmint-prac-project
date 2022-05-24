@@ -3,7 +3,7 @@
 require 'db.php';
 require 'functions.php';
 require './classes/user.class.php';
-
+//check user logged in
 if(!userLoggedIn()){
     redirect('login.php');
   }
@@ -18,13 +18,14 @@ $user_edit_instance = new users($pdo);
 //set relevant variables using $_SESSION for user id and $_POST for variables coming from form
 $user_edit_instance->setU_ID($_SESSION['u_id']);
 $user_edit_instance->setEmail($_POST['u_email']);
-$user_edit_instance->setPassword($_POST['u_password']);
 $user_edit_instance->setUsername($_POST['u_username']);
+//debugging
 m($user_edit_instance);
 //create variable for editing the user
 $action_edit_user = $user_edit_instance->editUser();
+// if there's an issue, tell user
 if(!$action_edit_user) {
     echo 'edit failed';
 }
-
+//if successful, redirect
 redirect('index.php');
