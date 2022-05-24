@@ -156,5 +156,16 @@ class users {
          
          return $result;
     }
+
+    function editPassword() {
+        $password = $this->getHashPassword();
+        $sql = $this->pdo->prepare('UPDATE users SET u_password = :u_password WHERE u_id = :u_id');
+        $sql->bindParam(':u_id', $_SESSION['u_id']);
+        $sql->bindParam(':u_password', $password);
+        if(!$sql->execute()){
+            return false;
+        }
+        return true;
+    }
 }
 

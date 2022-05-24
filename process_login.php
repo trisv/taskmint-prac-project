@@ -27,12 +27,12 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // if no result, fuck off
 if(empty($result)) {
-    die(header('Location: login.php?1'));
+    die(redirect('login.php?1'));
 }
 
 // if no match, once again fuck off 
 if(!password_verify($password, $result['u_password'])) {
-    die(header('Location: login.php?2'));
+    die(redirect('login.php?2'));
 }
 
 //if they are indeed who they say they are, set session variable to logged in

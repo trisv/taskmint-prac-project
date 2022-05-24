@@ -123,6 +123,7 @@ form input[type="submit"]:hover {
   margin:10px auto;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:2.5rem;
   background-color:#95a3b3;
 }
@@ -150,6 +151,24 @@ form input[type="submit"]:hover {
   margin: 2% 0;
 }
 
+.edit-user-link:hover {
+  background-color:white;
+  color:#2a9d8f;
+}
+
+.edit-password-link {
+  background-color:#2a9d8f;
+  color:white;
+  padding:10px;
+  border-radius: 2px;
+  text-decoration:none;
+}
+
+.edit-password-link:hover {
+  background-color:white;
+  color:#2a9d8f;
+}
+
 .row-2 {
   display:flex;
   justify-content:flex-start;
@@ -158,8 +177,15 @@ form input[type="submit"]:hover {
 }
 
 .user-form-container {
-  width:20%;
+  height:500px;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  align-items:center;
+  justify-content: center;
 }
+
+
 
 .user-form {
   display:flex;
@@ -167,6 +193,7 @@ form input[type="submit"]:hover {
   min-height:175px;
   padding:28px;
   background-color:#95a3b3;
+  
 }
 
 .task-form-container {
