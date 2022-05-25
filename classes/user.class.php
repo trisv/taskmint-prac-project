@@ -100,10 +100,9 @@ class users {
         $email = $this->getEmail();
         $password = $this->getHashPassword();
         $username = $this->getUsername();
-        $sql = $this->pdo->prepare('UPDATE users SET u_email = :u_email, u_password = :u_password, u_username = :u_username WHERE u_id = :u_id');
+        $sql = $this->pdo->prepare('UPDATE users SET u_email = :u_email, u_username = :u_username WHERE u_id = :u_id');
         $sql->bindParam(':u_id', $_SESSION['u_id']);
         $sql->bindParam(':u_email', $email);
-        $sql->bindParam(':u_password', $password);
         $sql->bindParam(':u_username', $username);
         if(!$sql->execute()){
             return false;

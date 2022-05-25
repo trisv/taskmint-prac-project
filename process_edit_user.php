@@ -28,4 +28,5 @@ if(!$action_edit_user) {
     echo 'edit failed';
 }
 //if successful, redirect
+$_SESSION['username'] = $_POST['u_username'];
 redirect('index.php');

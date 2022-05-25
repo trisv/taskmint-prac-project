@@ -6,6 +6,7 @@ session_start();
 //require database connection
 require 'db.php';
 require './classes/user.class.php';
+require 'functions.php';
 
 //check if anything was posted
 if(!isset($_POST['submit'])) {
@@ -24,4 +25,6 @@ if($create === false) {
   die('failed');
 }
 
-echo 'win new user';
+//echo 'win new user'
+
+redirect('login.php');
