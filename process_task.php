@@ -34,6 +34,6 @@ if($create === false){
     die('failed');
 }
 
-echo 'create succeeded';
-header('location:index.php');
+// echo 'Task successfully created';
+redirect('index.php');
 

@@ -1,3 +1,5 @@
+/* Font faces */ 
+
 @font-face {
   font-family: 'Montserrat';
   font-style: italic;
@@ -29,6 +31,8 @@
   src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+/* Generic, main level styling */
 
 html {
   font-family: "Montserrat", sans-serif;
@@ -39,6 +43,8 @@ html {
 body {
   margin:0;
 }
+
+/* Header Styling */
 
 .header {
   display:flex;
@@ -63,7 +69,7 @@ body {
   color: #4b4e6d;
 }
 
-
+/* Form styling */
 
 .form-container {
   display:flex;
@@ -105,7 +111,7 @@ form input:active {
 
 form input[type="submit"] {
   margin-top: 10px;
-  border-radius: 3px;
+  border-radius: 2px;
   border:none;
   background-color:#38a3a5;
   color:#fff;
@@ -119,6 +125,7 @@ form input[type="submit"]:hover {
   color:#222222;
 }
 
+/* Index page row styling */
 .row-1 {
   margin:10px auto;
   display:flex;
@@ -127,6 +134,16 @@ form input[type="submit"]:hover {
   padding:2.5rem;
   background-color:#95a3b3;
 }
+
+.row-2 {
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+  gap:10px;
+  min-height:175px;
+}
+
+/* Dashboard Welcome Bar Styling */
 
 .welcome-bar {
   color:#fff;
@@ -141,6 +158,8 @@ form input[type="submit"]:hover {
   display:block;
   
 }
+
+/* Buttons Styling */
 
 .edit-user-link {
   color:white;
@@ -169,13 +188,51 @@ form input[type="submit"]:hover {
   color:#2a9d8f;
 }
 
-.row-2 {
-  display:flex;
-  justify-content:flex-start;
-  align-items:flex-start;
-  gap:10px;
-  min-height:175px;
+.logout-link {
+  padding:10px;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #38a3a5;
+  text-decoration:none;
 }
+
+.logout-link:hover {
+  background-color: #38a3a5;
+  color: #fff;
+}
+
+.delete-task-link {
+  color:white;
+  padding:10px;
+  border-radius: 2px;
+  text-decoration:none;
+  background-color: #264653;
+  width: 30%;
+  margin:2% 0;
+}
+
+.delete-task-link:hover {
+  color:#264653;
+  background-color: #edede9;
+}
+
+.edit-task-link {
+  color:white;
+  padding:10px;
+  border-radius: 2px;
+  text-decoration:none;
+  background-color:#2a9d8f;
+  width:30%;
+  margin: 2% 0;
+}
+
+.edit-task-link:hover {
+  color:#2a9d8f;
+  background-color:#edede9;
+}
+
+/* User-related editing form styling */
+
 
 .user-form-container {
   height:500px;
@@ -196,6 +253,8 @@ form input[type="submit"]:hover {
   background-color:#95a3b3;
   
 }
+
+/* Task related styling */
 
 .task-form-container {
   width:20%;
@@ -235,38 +294,9 @@ form input[type="submit"]:hover {
   border-radius:2px;
 }
 
-.delete-task-link {
-  color:white;
-  padding:10px;
-  border-radius: 2px;
-  text-decoration:none;
-  background-color: #264653;
-  width: 30%;
-  margin:2% 0;
-}
-
-.delete-task-link:hover {
-  color:#264653;
-  background-color: #edede9;
-}
-
-.edit-task-link {
-  color:white;
-  padding:10px;
-  border-radius: 2px;
-  text-decoration:none;
-  background-color:#2a9d8f;
-  width:30%;
-  margin: 2% 0;
-}
-
-.edit-task-link:hover {
-  color:#2a9d8f;
-  background-color:#edede9;
-}
-
 .task-overview-container {
   display:flex;
+  flex-direction:row;
   justify-content:center;
   align-content:center;
   padding: 100px;
@@ -281,44 +311,47 @@ form input[type="submit"]:hover {
   color:#fff;
   padding:30px;
   box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
-  border-radius:10px;
+  border-radius:2px;
 }
 
-.logout-link {
-  padding:10px;
-  border-radius: 2px;
-  background-color: #fff;
-  color: #38a3a5;
-  text-decoration:none;
-}
+/* Comments related styling */
 
-.logout-link:hover {
-  background-color: #38a3a5;
-  color: #fff;
+.comment-form {
+  display:flex;
+  min-width:175px;
+  min-height:175px;
+  padding:28px;
+  background-color:#95a3b3;
+  margin-right: 10px;
 }
 
 .comment-container {
   display:flex;
-  justify-content:center;
-  align-content:center;
-  padding: 100px;
+  width:100%;
+  justify-content:flex-start;
+  align-content:flex-start;
+  padding: 25px;
 }
 
 .display-comment-container {
   display:flex;
-  justify-content:center;
-  align-content:center;
-  padding: 100px; 
+  width:80%;
+  flex-flow: row wrap;
+  justify-content:flex-start;
+  align-items:flex-start;
+  gap:20px;
+
 }
 
 .display-comment-box {
   display:flex;
-  flex-direction: column;
+  flex-flow: column;
   width:auto;
   height:auto;
-  background-color:#95a3b3;
-  color:#fff;
-  padding:30px;
+  border:1px solid #222222;
+  background-color:#f1f1f1;
+  color:#222222;
+  padding:25px;
   box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
-  border-radius:10px;
+  border-radius:2px;
 }

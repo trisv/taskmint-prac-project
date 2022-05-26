@@ -17,4 +17,3 @@ function m($args){
     print_r($args);
     echo "</pre>";
 }
-
