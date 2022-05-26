@@ -8,11 +8,15 @@ require 'db.php';
 require './classes/user.class.php';
 require 'functions.php';
 
+
+
 //check if anything was posted
 if(!isset($_POST['submit'])) {
 //if nothing was posted, send back to signup.php
 die(Header('Location: signup.php'));
 }
+
+
 
 $u = new users($pdo);
 $u->setEmail($_POST['u_email']);

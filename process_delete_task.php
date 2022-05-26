@@ -5,6 +5,11 @@ require 'db.php';
 require 'functions.php';
 require './classes/task.class.php';
 
+//check if logged in, otherwise go away
+if(!userLoggedIn()){
+    redirect('login.php');
+  }
+
 //create a class instance 
 $task_delete_instance = new tasks($pdo);
 //set user id and task id using correct class methods so correct information is selected

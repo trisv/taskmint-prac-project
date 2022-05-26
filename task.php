@@ -2,6 +2,7 @@
 session_start();
 require 'functions.php';
 require './classes/task.class.php';
+
 //check if logged in
 if(!userLoggedIn()){
     redirect('login.php');

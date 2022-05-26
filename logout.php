@@ -5,6 +5,8 @@ session_start();
 require 'functions.php';
 //unset the session variable loggedIn
 unset($_SESSION['loggedIn']);
+unset($_SESSION['u_id']);
+unset($_SESSION['username']);
 //destroy the session
 session_destroy();
 //then redirect to login

@@ -10,6 +10,10 @@ require 'db.php';
 //require task.class.php
 require './classes/task.class.php';
 
+if(!userLoggedIn()){
+    redirect('login.php');
+  }
+
 if(isset($_POST['submit'])) {
     //if nothing was posted, send back to signup.php
     die(Header('Location: index.php'));
