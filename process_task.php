@@ -2,12 +2,12 @@
 
 //start session
 session_start();
-
+require 'functions.php';
 //require the db.php file
 require 'db.php';
 // // turned global off as not needed (i think)
 // global $pdo
-//require task.class.php
+//require the task class
 require './classes/task.class.php';
 
 if(!userLoggedIn()){
