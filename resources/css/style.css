@@ -296,3 +296,10 @@ form input[type="submit"]:hover {
   background-color: #38a3a5;
   color: #fff;
 }
+
+.comment-container {
+  display:flex;
+  justify-content:center;
+  align-content:center;
+  padding: 100px;
+}
