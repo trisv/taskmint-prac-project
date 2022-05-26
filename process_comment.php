@@ -9,10 +9,10 @@ if(!userLoggedIn()){
   }
 
 //check if post type is submit
-// if(!isset($_POST['submit'])) {
-//     //if nothing was posted, send back to index.php
-//     die(redirect('index.php'));
-// }
+if(!isset($_POST['submit'])) {
+    //if nothing was posted, send back to index.php
+    die(redirect('index.php'));
+}
 //create new comments class instance
 $add_comment = new comments($pdo);
 //set ids for user, task and comment

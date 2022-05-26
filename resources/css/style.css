@@ -303,3 +303,22 @@ form input[type="submit"]:hover {
   align-content:center;
   padding: 100px;
 }
+
+.display-comment-container {
+  display:flex;
+  justify-content:center;
+  align-content:center;
+  padding: 100px; 
+}
+
+.display-comment-box {
+  display:flex;
+  flex-direction: column;
+  width:auto;
+  height:auto;
+  background-color:#95a3b3;
+  color:#fff;
+  padding:30px;
+  box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius:10px;
+}

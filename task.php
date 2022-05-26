@@ -47,6 +47,7 @@ if(!$display_task_info){
     echo "</div>";
    
 // }
+
 ?>
 
 <div class="comment-container">
@@ -62,18 +63,19 @@ if(!$display_task_info){
 
 <?php 
 
+
 $display_comment = new comments($pdo);
 $display_comment->setU_ID($_SESSION['u_id']);
 $display_comment->setTaskID($_GET['task_id']);
 $display_comment_info = $display_comment->viewComments();
 
-m($display_comment_info);
+//m($display_comment_info);
 foreach($display_comment_info as $comment_info) {
-
-}
-echo "<div class='display-comment container>";
-echo "<div class='display_comment_box>";
+echo "<div class='display-comment-container>";
+echo "<div class='display-comment-box>";
 echo "<strong>Comment:</strong>" . $comment_info['comment_message'];
 echo "<strong>Date Added:</strong>" . date("d/m/Y H:i:s A",$comment_info['comment_date_added']);
 echo "</div>";
 echo "</div>";
+
+}
