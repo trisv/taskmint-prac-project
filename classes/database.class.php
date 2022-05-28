@@ -7,7 +7,12 @@ class Database {
     private $password = '';
     private $dbname='PHPv1';
     private $dsn;
+    // private $pdo;
 
+    //constructor
+    function __construct() {
+        $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
+    }
     //private methods
     
     //connect to database
@@ -19,7 +24,7 @@ class Database {
             //create new pdo instance
             $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
             if($pdo) {
-             
+             echo "connected to databse successfully";
             }
           } catch (PDOException $e) {
               echo $e->getMessage();
