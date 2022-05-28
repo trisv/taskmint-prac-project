@@ -41,7 +41,7 @@ if(!$display_task_info){
     echo "<strong>Task Name:</strong> " . $display_task_info['task_name'] . '<br>';
     echo "<strong>Task Details:</strong> " . $display_task_info['task_details'] . "<br>";
     echo "<strong>Task Date Added:</strong> " . date("F j, Y, g:i a", $display_task_info['task_date_added']) . "<br>";
-    echo "<a href='process_edit_task.php?task_id=" . $display_task_info['task_id'] . "' class='edit-task-link'>" . "Edit" . "</a>";        
+    echo "<a href='edit_task.php?task_id=" . $display_task_info['task_id'] . "' class='edit-task-link'>" . "Edit" . "</a>";        
     echo "<a href='process_delete_task.php?task_id=" . $display_task_info['task_id'] . "' class='delete-task-link'>" . "Delete" . "</a>";
     echo "</div>";
     echo "</div>";

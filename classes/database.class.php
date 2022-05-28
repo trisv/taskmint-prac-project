@@ -11,9 +11,9 @@ class Database {
     //private methods
     
     //connect to database
-    private function connectDatabase($database){
+    private function connectDatabase($dbname){
         //set dsn
-        $dsn = $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
+        $this->dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
         //create PDO instance
         try {
             //create new pdo instance
