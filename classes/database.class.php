@@ -6,19 +6,19 @@ class Database {
     private $user = 'root';
     private $password = '';
     private $dbname='PHPv1';
-
+    private $dbh;
     //private methods
     
     //connect to database
     public function connect(){
         //set dsn
-        $this->dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         //create PDO instance
         try {
-            //create new pdo instance (also defining it as variable in here, not as private class property for security I guess)
-            $pdo = new PDO($dsn, $this->user, $this->password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+            //create new pdo instance as value for dbh
+            $this->dbh = new PDO($dsn, $this->user, $this->password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
             //if connection is successful, inform user
-            if($pdo) {
+            if($this->dbh) {
              //echo "connected to databse successfully";
             }
           } catch (PDOException $e) {
