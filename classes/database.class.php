@@ -2,28 +2,17 @@
 
 class Database {
     //properties
-    // private $host = 'localhost';
-    // private $user = 'root';
-    // private $password = '';
-    // private $dbname='PHPv1';
-    private $dsn;
-    // private $pdo;
+    private $host = 'localhost';
+    private $user = 'root';
+    private $password = '';
+    private $dbname='PHPv1';
 
-    //constructor
-    function __construct(
-        $host = 'localhost',
-        $dbname='PHPv1',
-        $user = 'root',
-        $password = '',) {
-        //set dsn    
-        $this->dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
-    }
     //private methods
     
     //connect to database
-    private function connectDatabase($dbname){
+    public function connect(){
         //set dsn
-        // $this->dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
+        $this->dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
         //create PDO instance
         try {
             //create new pdo instance (also defining it as variable in here, not as private class property for security I guess)
