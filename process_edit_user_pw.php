@@ -29,7 +29,7 @@ $user_pw_edit_instance->setPassword($_POST['u_password']);
 m($user_pw_edit_instance);
 //db query to fetch pw to compare POST password against 
 $password_query = 'SELECT u_password FROM users WHERE u_id = :u_id';
-$stmt = $pdo->prepare($password_query);
+$stmt = $conn->getDB()->prepare($password_query);
 $stmt->bindParam('u_id', $_SESSION['u_id']);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
