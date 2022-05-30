@@ -4,9 +4,11 @@
 session_start();
 
 //require database connection
-require 'db.php';
-require './classes/user.class.php';
+//require 'db.php';
 require 'functions.php';
+require './classes/database.class.php';
+require './classes/user.class.php';
+$conn = new Database;
 
 
 
@@ -18,7 +20,7 @@ die(Header('Location: signup.php'));
 
 
 
-$u = new users($pdo);
+$u = new users($conn->getDB());
 $u->setEmail($_POST['u_email']);
 $u->setUsername($_POST['u_username']);
 $u->setPassword($_POST['u_password']);

@@ -1,8 +1,10 @@
 <?php session_start();
 //require all the necessary files - db for connection, functions for functions and task class
-require 'db.php';
+//require 'db.php';
 require 'functions.php';
+require './classes/database.class.php';
 require './classes/task.class.php';
+$conn = new Database;
 
 if(!userLoggedIn()){
     redirect('login.php');
@@ -15,7 +17,7 @@ if(isset($_POST['submit'])) {
 }
 
 //create new class instance
-$task_edit_instance = new tasks($pdo);
+$task_edit_instance = new tasks($conn->getDB());
 //set user and task ids
 $task_edit_instance->setU_ID($_SESSION['u_id']);
 $task_edit_instance->setTaskID($_POST['task_id']);

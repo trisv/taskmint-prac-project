@@ -1,8 +1,10 @@
 <?php session_start();
 //require all the necessary files - db for connection, functions for functions and task class
-require 'db.php';
+//require 'db.php';
 require 'functions.php';
+require './classes/database.class.php';
 require './classes/user.class.php';
+$conn = new Database;
 //check user logged in
 if(!userLoggedIn()){
     redirect('login.php');
@@ -14,7 +16,7 @@ if(isset($_POST['submit'])) {
     die(Header('Location: index.php'));
 }
 //create new users class instance
-$user_edit_instance = new users($pdo);
+$user_edit_instance = new users($conn->getDB());
 //set relevant variables using $_SESSION for user id and $_POST for variables coming from form
 $user_edit_instance->setU_ID($_SESSION['u_id']);
 $user_edit_instance->setEmail($_POST['u_email']);

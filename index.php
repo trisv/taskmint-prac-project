@@ -1,7 +1,9 @@
 <?php
 session_start();
 require 'functions.php';
+require './classes/database.class.php';
 require './classes/task.class.php';
+$conn = new Database;
 
 if(!userLoggedIn()){
   redirect('login.php');
@@ -37,7 +39,7 @@ if(!userLoggedIn()){
     <div class="tasks-display-container" style="width:80%;">
       <?php 
       //set new class instance 
-      $tasks_list = new tasks($pdo);
+      $tasks_list = new tasks($conn->getDB());
       //tell class who user is
         $tasks_list->setU_ID($_SESSION['u_id']);
       //echo tasks viewTasks method to view tasks in database

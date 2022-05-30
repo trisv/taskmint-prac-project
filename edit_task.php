@@ -1,9 +1,12 @@
 <?php 
 session_start();
 //require all the necessary files - db for connection, functions for functions and task class
-require 'db.php';
+//require 'db.php';
 require 'functions.php';
 require './classes/task.class.php';
+require './classes/database.class.php';
+
+$conn = new Database;
 
 //check if logged in, otherwise go away
 if(!userLoggedIn()){
@@ -25,7 +28,7 @@ require 'header.php';
         <input type="hidden" name="task_id" value="<?php echo $_GET['task_id']; ?>">
         <?php
 
-        $display_info_for_update = new tasks($pdo);
+        $display_info_for_update = new tasks($conn->getDB());
         $display_info_for_update->setU_ID($_SESSION['u_id']);
         $display_info_for_update->setTaskID($_GET['task_id']);
         $view_edit_info = $display_info_for_update->viewTaskSingle();

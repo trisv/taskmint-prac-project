@@ -2,9 +2,11 @@
 
 session_start();
 //require all the necessary files - db for connection, functions for functions and task class
-require 'db.php';
+//require 'db.php';
 require 'functions.php';
+require './classes/database.class.php';
 require './classes/user.class.php';
+$conn = new Database;
 
 //check if logged in, otherwise go away
 if(!userLoggedIn()){

@@ -1,8 +1,10 @@
 <?php 
 session_start();
 require 'functions.php';
+require './classes/database.class.php';
 require './classes/task.class.php';
 require './classes/comment.class.php';
+$conn = new Database;
 
 //check if logged in
 if(!userLoggedIn()){
@@ -16,7 +18,7 @@ if(!userLoggedIn()){
 
 require 'header.php';
 
-$display_task = new tasks($pdo);
+$display_task = new tasks($conn->getDB());
 //set user id
 $display_task->setU_ID($_SESSION['u_id']);
 //set task id 
@@ -60,7 +62,7 @@ if(!$display_task_info){
     </form>
   </div>
   <?php 
-$display_comment = new comments($pdo);
+$display_comment = new comments($conn->getDB());
 $display_comment->setU_ID($_SESSION['u_id']);
 $display_comment->setTaskID($_GET['task_id']);
 $display_comment_info = $display_comment->viewComments();

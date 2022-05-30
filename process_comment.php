@@ -1,8 +1,10 @@
 <?php
 session_start();
-require 'db.php';
+//require 'db.php';
 require 'functions.php';
+require './classes/database.class.php';
 require './classes/comment.class.php';
+$conn = new Database;
 
 if(!userLoggedIn()){
     redirect('login.php');
@@ -14,7 +16,7 @@ if(!isset($_POST['submit'])) {
     die(redirect('index.php'));
 }
 //create new comments class instance
-$add_comment = new comments($pdo);
+$add_comment = new comments($conn->getDB());
 //set ids for user, task and comment
 $add_comment->setU_ID($_SESSION['u_id']);
 $add_comment->setTaskID($_POST['task_id']);

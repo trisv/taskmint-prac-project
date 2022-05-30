@@ -1,8 +1,10 @@
 <?php session_start();
 //require all the necessary files - db for connection, functions for functions and task class
-require 'db.php';
+//require 'db.php';
 require 'functions.php';
+require './classes/database.class.php';
 require './classes/user.class.php';
+$conn = new Database;
 
 if(!userLoggedIn()){
     redirect('login.php');
@@ -19,7 +21,7 @@ $new_password = $_POST['u_password'];
 $confirm_password = $_POST['confirm_password'];
 
 //create new users class instance
-$user_pw_edit_instance = new users($pdo);
+$user_pw_edit_instance = new users($conn->getDB());
 //set relevant variables for class 
 $user_pw_edit_instance->setU_ID($_SESSION['u_id']);
 $user_pw_edit_instance->setPassword($_POST['u_password']);
