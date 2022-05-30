@@ -25,7 +25,7 @@ class Database {
               echo $e->getMessage();
           }
     }
-
+    //user getDB with other classes like so: $u = new users($conn->getDB)
     public function getDB() {
         return $this->dbh;
     }
