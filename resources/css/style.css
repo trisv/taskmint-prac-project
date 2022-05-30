@@ -346,7 +346,7 @@ form input[type="submit"]:hover {
 .display-comment-box {
   display:flex;
   flex-flow: column;
-  width:auto;
+  width:40%;
   height:auto;
   border:1px solid #222222;
   background-color:#f1f1f1;
