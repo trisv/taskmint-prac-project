@@ -10,7 +10,7 @@ class Database {
     //private methods
     
     //connect to database
-    public function connect(){
+    function __construct(){
         //set dsn
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         //create PDO instance
@@ -18,11 +18,15 @@ class Database {
             //create new pdo instance as value for dbh
             $this->dbh = new PDO($dsn, $this->user, $this->password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
             //if connection is successful, inform user
-            if($this->dbh) {
+            if(isset($this->dbh)) {
              //echo "connected to databse successfully";
             }
           } catch (PDOException $e) {
               echo $e->getMessage();
           }
+    }
+
+    public function getDB() {
+        return $this->dbh;
     }
 }
