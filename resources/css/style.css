@@ -37,11 +37,12 @@
 html {
   font-family: "Montserrat", sans-serif;
   width:100%;
-  color: #222222;
+  color: #17202A;
 }
 
 body {
   margin:0;
+  color: #17202A;
 }
 
 /* Header Styling */
@@ -49,8 +50,9 @@ body {
 .header {
   display:flex;
   justify-content: space-between;
-  background-color: #84dcc6;
+  background-color: #AED6F1;
   padding: 15px 2.5rem;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.2);
 }
 
 .header .nav {
@@ -61,12 +63,12 @@ body {
 
 .header .nav li a {
   font-weight:bold;
-  color: #222222;
+  color: #17202A;
   text-decoration: none;
 }
 
 .header .nav li a:hover {
-  color: #4b4e6d;
+  color: #566573;
 }
 
 /* Form styling */
@@ -90,8 +92,8 @@ body {
 
 form {
   padding: 20px;
-  color:#fff;
-  background-color: #95a3b3;
+  color: #17202A;
+  background-color: #fff;
   display:flex;
   flex-direction: column;
   gap: 10px;
@@ -114,24 +116,20 @@ form input {
   background-color:#f2f2f2;
 }
 
-form input:active {
-  border: 1px solid #598392!important;
-}
-
 form input[type="submit"] {
   margin-top: 10px;
   border-radius: 2px;
   border:none;
-  background-color:#38a3a5;
-  color:#fff;
+  background-color:#AED6F1;
+  color:#17202A;
 }
 
 form input[type="submit"]:hover {
   margin-top: 10px;
   transform: translateY(-4px);
   transition: ease-in-out;
-  background-color: #84dcc6;
-  color:#222222;
+  background-color: #2E86C1;
+  color:#17202A;
 }
 
 @media only screen and (max-width: 600px) {
@@ -149,7 +147,7 @@ form input[type="submit"]:hover {
   justify-content:space-between;
   align-items:center;
   padding:2.5rem;
-  background-color:#95a3b3;
+  background-color:#fff;
 }
 
 .row-2 {
@@ -208,7 +206,7 @@ form input[type="submit"]:hover {
 /* Dashboard Welcome Bar Styling */
 
 .welcome-bar {
-  color:#fff;
+  color: #171738;
 }
 
 .welcome-summary {
@@ -224,22 +222,22 @@ form input[type="submit"]:hover {
 /* Buttons Styling */
 
 .edit-user-link {
-  color:white;
+  color:#17202A;
   padding:10px;
   border-radius: 2px;
   text-decoration:none;
-  background-color:#2a9d8f;
+  background-color:#AED6F1;
   margin: 2% 0;
 }
 
 .edit-user-link:hover {
   background-color:white;
-  color:#2a9d8f;
+  color:#17202A;
 }
 
 .edit-password-link {
-  background-color:#2a9d8f;
-  color:white;
+  background-color: #AED6F1;
+  color:#17202A;
   padding:10px;
   border-radius: 2px;
   text-decoration:none;
@@ -247,49 +245,49 @@ form input[type="submit"]:hover {
 
 .edit-password-link:hover {
   background-color:white;
-  color:#2a9d8f;
+  color:#17202A;
 }
 
 .logout-link {
   padding:10px;
   border-radius: 2px;
   background-color: #fff;
-  color: #38a3a5;
+  color: #17202A;
   text-decoration:none;
 }
 
 .logout-link:hover {
-  background-color: #38a3a5;
-  color: #fff;
+  background-color: #AED6F1;
+  color: #17202A;
 }
 
 .delete-task-link {
-  color:white;
+  color:#17202A;
   padding:10px;
   border-radius: 2px;
   text-decoration:none;
-  background-color: #264653;
+  background-color: #AED6F1;
   width: 30%;
   margin:2% 0;
 }
 
 .delete-task-link:hover {
-  color:#264653;
+  color:#17202A;
   background-color: #edede9;
 }
 
 .edit-task-link {
-  color:white;
+  color:#17202A;
   padding:10px;
   border-radius: 2px;
   text-decoration:none;
-  background-color:#2a9d8f;
+  background-color:#2E86C1;
   width:30%;
   margin: 2% 0;
 }
 
 .edit-task-link:hover {
-  color:#2a9d8f;
+  color:#17202A;
   background-color:#edede9;
 }
 
@@ -313,7 +311,7 @@ form input[type="submit"]:hover {
   min-width:175px;
   min-height:175px;
   padding:28px;
-  background-color:#95a3b3;
+  background-color:#fff;
   
 }
 
@@ -323,7 +321,7 @@ form input[type="submit"]:hover {
   display:flex;
   flex-direction:row;
   justify-content: flex-start;
-  background-image:linear-gradient(35deg, #38a3a5, #b8f2e6);
+  background-image:linear-gradient(35deg, #AED6F1, #fff);
   gap: 10px;
   padding:10px;
   margin-top: 10px;
@@ -343,7 +341,7 @@ form input[type="submit"]:hover {
   min-width:175px;
   min-height:175px;
   padding:28px;
-  background-color:#95a3b3;
+  background-color:#fff;
 }
 
 .edit-task-form {
@@ -351,7 +349,7 @@ form input[type="submit"]:hover {
   min-width:175px;
   min-height:175px;
   padding:28px;
-  background-color:#95a3b3;
+  background-color:#fff;
 }
 
 .tasks-display-container {
@@ -366,7 +364,7 @@ form input[type="submit"]:hover {
   justify-content:flex-start;
   flex-wrap:wrap;
   padding:10px;
-  background-image:linear-gradient(35deg, #38a3a5, #b8f2e6);
+  background-image:linear-gradient(35deg, #AED6F1, #fff);
 }
 
 .task-box {
@@ -394,7 +392,7 @@ form input[type="submit"]:hover {
   width:auto;
   height:auto;
   background-color:#fff;
-  color:#222;
+  color:#17202A;
   padding:30px;
   box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
   border-radius:2px;
@@ -427,7 +425,7 @@ form input[type="submit"]:hover {
   min-width:175px;
   min-height:175px;
   padding:28px;
-  color: #222;
+  color: #17202A;
   background-color:#fff;
   margin-right: 10px;
 }
@@ -457,7 +455,7 @@ form input[type="submit"]:hover {
   height:auto;
   border:1px solid #222222;
   background-color:#f1f1f1;
-  color:#222222;
+  color:#17202A;
   padding:25px;
   box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
   border-radius:2px;
