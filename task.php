@@ -35,7 +35,7 @@ if(!$display_task_info){
 //m($display_task_info);
 
 // var_dump($display_task_info = $display_task);
-
+    echo "<div class='task-container-row'>";
 // foreach($display_task_info as $task_info) {
     echo "<div class='task-overview-container'>";
     echo "<div class='task-overview-box'>";
@@ -78,7 +78,7 @@ echo "</div>";
 }
 echo "</div>";
 echo "</div>";
-
+echo "</div>";
 ?>
 </div>
 
