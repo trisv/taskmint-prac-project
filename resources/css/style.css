@@ -74,7 +74,16 @@ body {
 .form-container {
   display:flex;
   justify-content: space-around;
-  height: 500px;
+  height: auto;
+  align-items: center;
+
+}
+
+.signup-form-container {
+  margin-top: 10px;
+  display:flex;
+  justify-content: space-around;
+  height: auto;
   align-items: center;
 
 }
@@ -125,6 +134,14 @@ form input[type="submit"]:hover {
   color:#222222;
 }
 
+@media only screen and (max-width: 600px) {
+  .signup-form-container {
+
+    width:100%!important;
+  }
+}
+
+
 /* Index page row styling */
 .row-1 {
   margin:10px auto;
@@ -142,6 +159,51 @@ form input[type="submit"]:hover {
   gap:10px;
   min-height:175px;
 }
+
+/* Media queries for index row */
+@media only screen and (max-width: 600px) {
+  .row-2 {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .task-form-container {
+    width:100%!important;
+  }
+
+  .tasks-display-container {
+    width:100%!important;
+    
+  }
+
+  .task-display {
+    justify-content: space-evenly!important;
+  }
+
+  .task-box {
+    width:40%!important;
+  }
+}
+/* media queries */
+@media only screen and (min-width:600px) and (max-width: 1124px) {
+  .task-form-container {
+    width:auto!important;
+  }
+
+  .task-display-container {
+    width:auto!important;
+  }
+
+  .task-box {
+    width:40%!important;
+  }
+ }
+
+ @media only screen and (min-width: 600px) and (max-width: 628px) {
+   .task-box {
+     width: 100%!important;
+   }
+ }
 
 /* Dashboard Welcome Bar Styling */
 
@@ -270,8 +332,21 @@ form input[type="submit"]:hover {
 .task-form-container {
   width:20%;
 }
-
+.edit-task-form-container {
+  display:flex;
+  justify-content: center;
+  width:auto;
+  margin-top:10px;
+}
 .task-form {
+  display:flex;
+  min-width:175px;
+  min-height:175px;
+  padding:28px;
+  background-color:#95a3b3;
+}
+
+.edit-task-form {
   display:flex;
   min-width:175px;
   min-height:175px;
@@ -324,6 +399,26 @@ form input[type="submit"]:hover {
   box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
   border-radius:2px;
 }
+
+@media only screen and (max-width: 600px) {
+  .edit-task-form-container {
+    width: 100%!important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .edit-task-form {
+    display: flex;
+    flex-direction: column;
+    width:100%!important;
+    justify-content: space-evenly!important;
+  }
+
+  .task-form-container {
+    width:100%!important;
+  }
+
+ }
 
 /* Comments related styling */
 

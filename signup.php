@@ -6,7 +6,7 @@ require 'functions.php';
 
 
 <div class="main">
-  <div class="form-container">
+  <div class="signup-form-container">
       <form action="process_signup.php" method="post">
         <h2>Sign Up</h2>
         <p>Enter your details below</p>

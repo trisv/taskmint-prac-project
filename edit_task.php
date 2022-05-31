@@ -21,9 +21,9 @@ if(!isset($_GET['task_id']) || empty($_GET['task_id'])){
 //bring in the header
 require 'header.php'; 
 ?>
-
-<div class="task-form-container">
-      <form class="task-form" action="process_edit_task.php" method='POST' style="display:flex;width:300px;">
+<div class="main">
+<div class="edit-task-form-container">
+      <form class="task-form" action="process_edit_task.php" method='POST'>
         <h3>Edit Tasks</h3>
         <input type="hidden" name="task_id" value="<?php echo $_GET['task_id']; ?>">
         <?php
@@ -45,3 +45,4 @@ require 'header.php';
         <input type="submit" style="cursor:pointer;">
       </form>
     </div>
+</div>

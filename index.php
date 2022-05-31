@@ -18,7 +18,7 @@ if(!userLoggedIn()){
     <div class="welcome-bar">
       <div class='welcome-summary'>
         <div class='welcome-username'>
-          <?php echo 'Hello ' . "<strong>" . $_SESSION['username'] . "</strong>"; ?>
+          <?php echo 'Welcome ' . "<strong>" . $_SESSION['username'] . "</strong>"; ?>
         </div>
         <a class="edit-user-link" href='edit_user.php'>Edit User Details</a>
       </div>
