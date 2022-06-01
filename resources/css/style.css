@@ -321,7 +321,7 @@ form input[type="submit"]:hover {
   display:flex;
   flex-direction:row;
   justify-content: flex-start;
-  background-image:linear-gradient(35deg, #AED6F1, #fff);
+  background-image:linear-gradient(35deg, #AED6F1, #5DADE2);
   gap: 10px;
   padding:10px;
   margin-top: 10px;
@@ -364,7 +364,7 @@ form input[type="submit"]:hover {
   justify-content:flex-start;
   flex-wrap:wrap;
   padding:10px;
-  background-image:linear-gradient(35deg, #AED6F1, #fff);
+  background-image:linear-gradient(35deg, #AED6F1, #5DADE2);
 }
 
 .task-box {
