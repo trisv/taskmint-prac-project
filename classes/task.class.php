@@ -71,18 +71,6 @@ class tasks {
         return $this->task_date_added;
     }
 
-    //search term setters and getters
-    function setSearchTerm($search_term) {
-        $this->search_term = $search_term;
-    }
-
-    function getSearchTerm() {
-        if(empty($this->search_term)) {
-            return false;
-        }
-        return $this->search_term;
-    }
-
     function createTask() {
         try {
             //set variables manually to avoid notice issue
