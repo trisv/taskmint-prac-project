@@ -1,0 +1,42 @@
+<?php
+
+//start session
+session_start();
+
+//require database connection
+//require 'db.php';
+require 'functions.php';
+require './classes/database.class.php';
+require './classes/user.class.php';
+require './classes/task.class.php';
+$conn = new Database;
+
+//check if anything searched
+if(!isset($_POST['submit'])) {
+    die(redirect('index.php'));
+}
+
+//if something searched, process
+$user_id = $_SESSION['u_id'];
+$search_term = $_POST['search_term'];
+m($search_term);
+m($user_id);
+$search_query = 'SELECT * FROM tasks WHERE task_name LIKE :search_term AND u_id = :u_id';
+$stmt = $conn->getDB()->prepare($search_query);
+$search_term = "%" . $search_term . "%";
+$stmt->bindParam(':search_term', $search_term, PDO::PARAM_STR);
+$stmt->bindParam(':u_id', $user_id);
+$stmt->execute();
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+m($results);
+// foreach($results as $result) {
+//     echo "<div class='task-box'>";
+//     echo "<strong>Task ID:</strong> " . $result['task_id'] . "<br>";
+//     echo "<br>";
+//     echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $result['task_id'] . "'>" . $result['task_name'] . '</a><br>';
+//     echo "<strong>Task Details:</strong> " . $result['task_details'] . "<br>";
+//     echo "<strong>Task Date Added:</strong> " . date("F j, Y, g:i a", $result['task_date_added']) . "<br>";
+//     echo "</div>";
+// }
+
+

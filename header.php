@@ -17,4 +17,15 @@
     <li><a href="index.php">Home</a></li>
     <li><a href="signup.php">Join</a></li>
   </ul>
+  
+  
+  <?php 
+  if(userLoggedIn()) {
+  echo "<a class=logout-link href='logout.php'>Logout</a>";
+  }
+  if(!userLoggedIn()) {
+  echo "<a class='login-link' href='login.php'>Login</a>";
+  }
+  ?>
+  
   </div>

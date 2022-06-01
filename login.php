@@ -11,7 +11,7 @@ if(userLoggedIn()){
 </div>
 <div class="main">
   <div class="row d-flex">
-  <div class="form-container">
+  <div class="login-form-container">
       <form action="process_login.php" method="post">
         <h2>Login</h2>
         <p>Enter your details below to login</p>

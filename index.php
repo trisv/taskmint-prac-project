@@ -22,9 +22,12 @@ if(!userLoggedIn()){
         </div>
         <a class="edit-user-link" href='edit_user.php'>Edit User Details</a>
       </div>
-    </div>
-    <div>
-      <a class="logout-link"href='logout.php'>Logout</a>
+      <div>
+        <form class="search-form" name="search" method="POST" action="process_search.php">
+          <input type="text" name="search_term" placeholder="Search for a task here">
+          <input type="submit" value="search" name="submit">
+        </form>
+      </div>
     </div>
   </div>
   <div class="row-2">

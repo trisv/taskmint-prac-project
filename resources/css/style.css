@@ -50,6 +50,7 @@ body {
 .header {
   display:flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #AED6F1;
   padding: 15px 2.5rem;
   box-shadow: 0 0 10px rgb(0 0 0 / 0.2);
@@ -206,7 +207,12 @@ form input[type="submit"]:hover {
 /* Dashboard Welcome Bar Styling */
 
 .welcome-bar {
+  width:100%;
   color: #171738;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .welcome-summary {
@@ -248,16 +254,31 @@ form input[type="submit"]:hover {
   color:#17202A;
 }
 
+.login-link {
+  text-decoration: none;
+  color: #17202A;
+  font-weight:bold;
+  background-color: #5DADE2;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 2px;
+}
+
+.login-link:hover {
+  transform: scale(1.05);
+}
+
 .logout-link {
   padding:10px;
   border-radius: 2px;
   background-color: #fff;
   color: #17202A;
   text-decoration:none;
+  background-color: #5DADE2;
 }
 
 .logout-link:hover {
-  background-color: #AED6F1;
+  background-color: white;
   color: #17202A;
 }
 
@@ -459,4 +480,20 @@ form input[type="submit"]:hover {
   padding:25px;
   box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
   border-radius:2px;
+}
+
+/* login form */
+
+.login-form-container {
+  margin-top: 10px;
+  display:flex;
+  justify-content: space-around;
+  height: auto;
+  align-items: center;
+}
+
+/* search form */
+.search-form {
+  width: 300px;
+  box-shadow: none;
 }
