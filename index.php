@@ -24,7 +24,7 @@ if(!userLoggedIn()){
       </div>
       <div>
         <form class="search-form" name="search" method="POST" action="process_search.php">
-          <input type="text" name="search_term" placeholder="Search for a task here">
+          <input type="text" name="search_term" placeholder="Search for a task here" required>
           <input type="submit" value="search" name="submit">
         </form>
       </div>
