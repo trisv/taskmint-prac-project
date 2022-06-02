@@ -25,7 +25,7 @@ require 'header.php';
 
 //if something searched, process
 $user_id = $_SESSION['u_id'];
-$search_term = $_POST['search_term'];
+$search_term = htmlspecialchars($_POST['search_term']);
 // m($search_term);
 // m($user_id);
 $search_query = 'SELECT * FROM tasks WHERE task_name LIKE :search_term AND u_id = :u_id';
