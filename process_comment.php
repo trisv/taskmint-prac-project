@@ -21,7 +21,7 @@ $add_comment = new comments($conn->getDB());
 $add_comment->setU_ID($_SESSION['u_id']);
 $add_comment->setTaskID($_POST['task_id']);
 //set variables to add comment elements
-$add_comment->setCommentMessage($_POST['comment_message']);
+$add_comment->setCommentMessage(neutraliseInput($_POST['comment_message']));
 // $add_comment->setCommentDateAdded();
 //debuggin'
 m($add_comment->getCommentMessage());

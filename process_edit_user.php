@@ -19,8 +19,8 @@ if(isset($_POST['submit'])) {
 $user_edit_instance = new users($conn->getDB());
 //set relevant variables using $_SESSION for user id and $_POST for variables coming from form
 $user_edit_instance->setU_ID($_SESSION['u_id']);
-$user_edit_instance->setEmail($_POST['u_email']);
-$user_edit_instance->setUsername($_POST['u_username']);
+$user_edit_instance->setEmail(neutraliseInput($_POST['u_email']));
+$user_edit_instance->setUsername(neutraliseInput($_POST['u_username']));
 //debugging
 m($user_edit_instance);
 //create variable for editing the user

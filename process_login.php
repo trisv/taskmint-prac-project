@@ -14,8 +14,8 @@ if(!isset($_POST['submit'])) {
 }
 
 //if something was posted, we then set $_POST variables
-$email = $_POST['u_email'];
-$password = $_POST['u_password'];
+$email = neutraliseInput($_POST['u_email']);
+$password = neutraliseInput($_POST['u_password']);
 
 
 //run query to grab user data

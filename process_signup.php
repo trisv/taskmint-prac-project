@@ -21,9 +21,9 @@ die(Header('Location: signup.php'));
 
 
 $u = new users($conn->getDB());
-$u->setEmail($_POST['u_email']);
-$u->setUsername($_POST['u_username']);
-$u->setPassword($_POST['u_password']);
+$u->setEmail(neutraliseInput($_POST['u_email']));
+$u->setUsername(neutraliseInput($_POST['u_username']));
+$u->setPassword(neutraliseInput($_POST['u_password']));
 
 $create = $u->createUser();
 

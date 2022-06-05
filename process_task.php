@@ -26,8 +26,8 @@ if(isset($_POST['submit'])) {
 //set values 
 
 $t = new tasks($conn->getDB());
-$t->setTaskName($_POST['task_name']);
-$t->setTaskDetails($_POST['task_details']);
+$t->setTaskName(neutraliseInput($_POST['task_name']));
+$t->setTaskDetails(neutraliseInput($_POST['task_details']));
 $t->setTaskDateAdded(time());
 
 $create = $t->createTask();

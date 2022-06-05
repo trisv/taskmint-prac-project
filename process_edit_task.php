@@ -22,8 +22,8 @@ $task_edit_instance = new tasks($conn->getDB());
 $task_edit_instance->setU_ID($_SESSION['u_id']);
 $task_edit_instance->setTaskID($_POST['task_id']);
 //set POST variables 
-$task_edit_instance->setTaskName($_POST['task_name']);
-$task_edit_instance->setTaskDetails($_POST['task_details']);
+$task_edit_instance->setTaskName(neutraliseInput($_POST['task_name']));
+$task_edit_instance->setTaskDetails(neutraliseInput($_POST['task_details']));
 m($task_edit_instance);
 //create variable to edit task
 $action_edit_task = $task_edit_instance->editTask();

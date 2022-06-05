@@ -16,15 +16,15 @@ if(isset($_POST['submit'])) {
     die(redirect('index.php'));
 }
 //set $_POST variables from form
-$current_password = $_POST['current_password'];
-$new_password = $_POST['u_password'];
-$confirm_password = $_POST['confirm_password'];
+$current_password = neutraliseInput($_POST['current_password']);
+$new_password = neutraliseInput($_POST['u_password']);
+$confirm_password = neutraliseInput($_POST['confirm_password']);
 
 //create new users class instance
 $user_pw_edit_instance = new users($conn->getDB());
 //set relevant variables for class 
 $user_pw_edit_instance->setU_ID($_SESSION['u_id']);
-$user_pw_edit_instance->setPassword($_POST['u_password']);
+$user_pw_edit_instance->setPassword(neutraliseInput($_POST['u_password']));
 //bit of debugging
 m($user_pw_edit_instance);
 //db query to fetch pw to compare POST password against 

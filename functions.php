@@ -17,3 +17,11 @@ function m($args){
     print_r($args);
     echo "</pre>";
 }
+
+function neutraliseInput($data) {
+    $data = strip_tags($data);
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
