@@ -24,6 +24,7 @@ if(!userLoggedIn()){
       </div>
       <div>
         <form class="search-form" name="search" method="POST" action="process_search.php">
+          <h4>Search Tasks</h4>
           <input type="text" name="search_term" placeholder="Search for a task here" required>
           <input type="submit" value="search" name="submit">
         </form>
@@ -56,7 +57,7 @@ if(!userLoggedIn()){
             echo "<div class='task-box'>";
             //echo "<strong>Task ID:</strong> " . $task_item['task_id'] . "<br>";
             echo "<br>";
-            echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $task_item['task_id'] . "'>" . $task_item['task_name'] . '</a><br>';
+            echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $task_item['task_id'] . "' class='display-task-name'>" . $task_item['task_name'] . '</a><br>';
             //echo "<strong>Task Details:</strong> " . $task_item['task_details'] . "<br>";
             //echo "<strong>Task Date Added:</strong> " . date("F j, Y, g:i a", $task_item['task_date_added']) . "<br>";
             echo "<a href='edit_task.php?task_id=" . $task_item['task_id'] . "' class = 'edit-task-link'>" . "Edit" . "</a>";
