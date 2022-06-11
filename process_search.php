@@ -26,8 +26,6 @@ require 'header.php';
 //if something searched, process
 $user_id = $_SESSION['u_id'];
 $search_term = neutraliseInput($_POST['search_term']);
-// m($search_term);
-// m($user_id);
 $search_query = 'SELECT * FROM tasks WHERE task_name LIKE :search_term AND u_id = :u_id';
 $stmt = $conn->getDB()->prepare($search_query);
 $search_term = "%" . $search_term . "%";
@@ -35,7 +33,6 @@ $stmt->bindParam(':search_term', $search_term, PDO::PARAM_STR);
 $stmt->bindParam(':u_id', $user_id);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// m($results);
 echo "<div class='task-display-container'>";
 echo "<div class='task-display'>";
 foreach($results as $result) {

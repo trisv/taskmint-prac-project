@@ -32,12 +32,7 @@ require 'header.php';
         $display_info_for_update->setU_ID($_SESSION['u_id']);
         $display_info_for_update->setTaskID($_GET['task_id']);
         $view_edit_info = $display_info_for_update->viewTaskSingle();
-        //m($view_edit_info);
-
-        // foreach($view_edit_info as $info_item) {
-        //   echo "<strong>Task Name:</strong> " . $info_item['task_name'] . '<br>';
-        //   echo "<strong>Task Details:</strong> " . $info_item['task_details'] . "<br>";
-        // }
+        
         
         ?>
         <input type="text" name="task_name" value="<?php echo $view_edit_info['task_name'] ?>" required autofocus >

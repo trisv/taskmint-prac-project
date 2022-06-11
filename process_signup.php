@@ -4,7 +4,6 @@
 session_start();
 
 //require database connection
-//require 'db.php';
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/user.class.php';
@@ -31,6 +30,6 @@ if($create === false) {
   die('failed');
 }
 
-//echo 'win new user'
+//echo 'win, new user'
 
 redirect('login.php');

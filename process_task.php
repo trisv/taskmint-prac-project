@@ -3,11 +3,7 @@
 //start session
 session_start();
 require 'functions.php';
-//require the db.php file
-//require 'db.php';
-// // turned global off as not needed (i think)
-// global $pdo
-//require the task class
+//require the classes
 require './classes/database.class.php';
 require './classes/task.class.php';
 $conn = new Database;

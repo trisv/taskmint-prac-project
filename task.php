@@ -32,11 +32,11 @@ if(!$display_task_info){
   die(redirect('index.php'));
 }
 
-//m($display_task_info);
 
-// var_dump($display_task_info = $display_task);
+
+
     echo "<div class='task-container-row'>";
-// foreach($display_task_info as $task_info) {
+
     echo "<div class='task-overview-container'>";
     echo "<div class='task-overview-box'>";
     echo "<strong>Task ID:</strong> " . $display_task_info['task_id'] . "<br>";
@@ -67,7 +67,7 @@ $display_comment->setU_ID($_SESSION['u_id']);
 $display_comment->setTaskID($_GET['task_id']);
 $display_comment_info = $display_comment->viewComments();
 
-//m($display_comment_info);
+
 
 echo "<div class='display-comment-container'>";
 foreach($display_comment_info as $comment_info) {

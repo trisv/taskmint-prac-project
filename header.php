@@ -16,6 +16,7 @@
   <ul class="nav">
     <li><a href="index.php">Home</a></li>
     <?php 
+    //if user not logged in, display signup nav item
     if(!userLoggedIn()) {
     echo "<li><a href='signup.php'>Join</a></li>";
     }
@@ -24,6 +25,7 @@
   
   
   <?php 
+  //if user is logged in, display logout button, if not logged in then display login button
   if(userLoggedIn()) {
   echo "<a class=logout-link href='logout.php'>Logout</a>";
   } else {

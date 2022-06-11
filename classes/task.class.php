@@ -174,7 +174,6 @@ class tasks {
     }
 
     function deleteTask() {
-        //set task id to avoid notice issue
         $task_id = $this->getTaskID();
         $sql = $this->pdo->prepare('DELETE FROM tasks WHERE u_id = :u_id AND task_id = :task_id LIMIT 1');
         $sql->bindParam(':u_id', /*$this->getU_ID()*/$_SESSION['u_id']);
@@ -183,8 +182,7 @@ class tasks {
       
     }
 
-    function editTask() {
-        //set task id, task name and task details manually to avoid notice issue
+    function editTask() { 
         $task_id = $this->getTaskID();
         $task_name = $this->getTaskName();
         $task_details = $this->getTaskDetails();
@@ -203,10 +201,3 @@ class tasks {
 }
 
 
-//$t = new Task();
-
-//var_dump($t->getTaskName());
-
-//$t->setTaskName('tris');
-
-//echo $t->getTaskName();

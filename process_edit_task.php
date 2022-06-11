@@ -1,6 +1,5 @@
 <?php session_start();
 //require all the necessary files - db for connection, functions for functions and task class
-//require 'db.php';
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/task.class.php';

@@ -2,7 +2,6 @@
 //start session PRIORITY #1
 session_start();
 //require database connection
-//require 'db.php';
 require 'functions.php';
 require './classes/database.class.php';
 $conn = new Database;
@@ -19,7 +18,6 @@ $password = neutraliseInput($_POST['u_password']);
 
 
 //run query to grab user data
-
 $select_u_data = 'SELECT * FROM users WHERE u_email = :email';
 $stmt = $conn->getDB()->prepare($select_u_data);
 $stmt->bindParam(':email', $email);
@@ -27,12 +25,12 @@ $stmt->execute();
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// if no result, fuck off
+// if no result, redirect to login
 if(empty($result)) {
     die(redirect('login.php?1'));
 }
 
-// if no match, once again fuck off 
+// if no match, redirect to login 
 if(!password_verify($password, $result['u_password'])) {
     die(redirect('login.php?2'));
 }
