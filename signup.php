@@ -1,8 +1,8 @@
 <?php
 session_start(); 
 //require necessary files
-require 'header.php'; 
 require 'functions.php';
+require 'header.php'; 
 ?>
 
 

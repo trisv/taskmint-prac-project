@@ -46,6 +46,10 @@ body {
   color: #17202A;
 }
 
+a:-webkit-any-link {
+  outline-color: #fe7f2d;
+}
+
 /* Header Styling */
 
 .header {
@@ -109,12 +113,19 @@ form {
 .form-item {
   display:flex;
   flex-direction: column;
+  width:100%;
 }
 
 form input {
+  margin:5px;
   border:none;
   height: 1.75rem;
   background-color:#f2f2f2;
+  padding: 0 10px;
+}
+
+form input:focus-visible {
+  outline-color: #fe7f2d;
 }
 
 form input[type="submit"] {
