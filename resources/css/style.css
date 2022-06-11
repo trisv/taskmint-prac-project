@@ -95,7 +95,6 @@ body {
 form {
   padding: 20px;
   color: #17202A;
-  background-color: #fff;
   display:flex;
   flex-direction: column;
   gap: 5px;
@@ -144,7 +143,6 @@ form input[type="submit"]:hover {
 
 /* Index page row styling */
 .row-1 {
-  margin:10px auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -156,6 +154,7 @@ form input[type="submit"]:hover {
   display:flex;
   justify-content:flex-start;
   align-items:flex-start;
+  padding:1rem;
   gap:10px;
   min-height:175px;
 }
@@ -311,6 +310,14 @@ form input[type="submit"]:hover {
 .edit-task-link:hover {
   color:#17202A;
   background-color:#edede9;
+}
+
+@media only screen and (max-width: 600px) {
+  .welcome-bar {
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 
 /* User-related editing form styling */
@@ -496,11 +503,11 @@ form input[type="submit"]:hover {
 /* login form */
 
 .login-form-container {
-  margin-top: 10px;
   display:flex;
   justify-content: space-around;
-  height: auto;
+  height: 89vh;
   align-items: center;
+  background-image:linear-gradient(35deg, #AED6F1, #5DADE2);
 }
 
 /* search form */

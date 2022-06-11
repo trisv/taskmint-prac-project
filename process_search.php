@@ -34,6 +34,7 @@ $stmt->bindParam(':search_term', $search_term, PDO::PARAM_STR);
 $stmt->bindParam(':u_id', $user_id);
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if($results) {
 echo "<div class='task-display-container'>";
 echo "<div class='task-display'>";
 foreach($results as $result) {
@@ -47,5 +48,11 @@ foreach($results as $result) {
 }
 echo "</div>";
 echo "</div>";
-
+} else {
+    echo "<div class='task-display-container'>";
+    echo "<div class='task-display'>";
+    echo "<strong>No results. Try searching for a different term.<strong>";
+    echo "</div>";
+    echo "</div>";
+}
 
