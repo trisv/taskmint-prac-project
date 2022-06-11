@@ -99,7 +99,7 @@ form {
   display:flex;
   flex-direction: column;
   gap: 5px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /*box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);*/
 }
 
 .form-row {
@@ -261,7 +261,7 @@ form input[type="submit"]:hover {
   font-weight:bold;
   background-color: #5DADE2;
   padding: 10px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /*box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);*/
   border-radius: 2px;
 }
 
