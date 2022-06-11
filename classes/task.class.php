@@ -3,13 +3,16 @@
 
 
 class tasks {
+
     //task properties
     private $u_id;
     private $task_name = '';
     private $task_details;
     private $task_date_added;
+
     //creates a pdo instance to allow db to be passed to class through __construct function
     private $pdo;
+
     //provides db connection to class
     function __construct($db){
         $this->pdo = $db;
@@ -87,10 +90,10 @@ class tasks {
         
         } catch(PDOException $e) {
         //if there is an error in the statement, this will display it
-        // echo $e->getMessage();
+        echo $e->getMessage();
         return false;
         }
-        //if this function works, return true;
+        //if successful return true;
         return true;
     }
     
@@ -153,7 +156,7 @@ class tasks {
         return $result;
 
     }
-//this works much better without fetchAll
+    
     function viewTaskSingle() {
         //set task id to avoid notice issue
         $task_id = $this->getTaskID();

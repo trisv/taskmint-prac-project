@@ -12,9 +12,9 @@ if(!userLoggedIn()){
     redirect('login.php');
   }
 
-
 //bring in the header
 require 'header.php'; 
+
 ?>
 
 <div class="user-form-container">

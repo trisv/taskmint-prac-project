@@ -18,18 +18,19 @@ die(Header('Location: signup.php'));
 }
 
 
-
+//create new user class
 $u = new users($conn->getDB());
 $u->setEmail(neutraliseInput($_POST['u_email']));
 $u->setUsername(neutraliseInput($_POST['u_username']));
 $u->setPassword(neutraliseInput($_POST['u_password']));
 
+//create new user 
 $create = $u->createUser();
 
+//if create fails, then notify user and kill connection
 if($create === false) {
   die('failed');
 }
 
-//echo 'win, new user'
-
+//if succesful, redirect
 redirect('login.php');

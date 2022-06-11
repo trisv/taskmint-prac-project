@@ -3,7 +3,7 @@
 session_start();
 //require functions so things won't break
 require 'functions.php';
-//unset the session variable loggedIn
+//unset the session variables
 unset($_SESSION['loggedIn']);
 unset($_SESSION['u_id']);
 unset($_SESSION['username']);

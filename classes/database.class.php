@@ -1,18 +1,21 @@
 <?php 
 
 class Database {
+
     //properties
     private $host = 'localhost';
     private $user = 'root';
     private $password = '';
     private $dbname='PHPv1';
     private $dbh;
+
     //private methods
     
     //connect to database
     function __construct(){
         //set dsn
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+
         //create PDO instance
         try {
             //create new pdo instance as value for dbh
@@ -25,7 +28,7 @@ class Database {
               echo $e->getMessage();
           }
     }
-    //user getDB with other classes like so: $u = new users($conn->getDB)
+    //use getDB to give database connection like so: $u = new users($conn->getDB)
     public function getDB() {
         return $this->dbh;
     }

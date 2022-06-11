@@ -1,24 +1,24 @@
 <?php 
 session_start();
 //require all the necessary files - db for connection, functions for functions and task class
-//require 'db.php';
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/task.class.php';
 
 $conn = new Database;
 
-//check if logged in, otherwise go away
+//check if logged in, otherwise redirect to login
 if(!userLoggedIn()){
     redirect('login.php');
   }
+
 //check if task id is set and not empty 
 if(!isset($_GET['task_id']) || empty($_GET['task_id'])){
     redirect('index.php');
 
   }
 
-//bring in the header
+//require the header
 require 'header.php'; 
 ?>
 <div class="main">

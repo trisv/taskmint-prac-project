@@ -4,6 +4,7 @@ session_start();
 //require database connection
 require 'functions.php';
 require './classes/database.class.php';
+//create new database connection
 $conn = new Database;
 
 
@@ -35,7 +36,7 @@ if(!password_verify($password, $result['u_password'])) {
     die(redirect('login.php?2'));
 }
 
-//if they are indeed who they say they are, set session variable to logged in
+//if they are indeed who they say they are, set the session variables
 $_SESSION['loggedIn'] = true;
 $_SESSION['username'] = $result['u_username'];
 $_SESSION['u_id'] = $result['u_id'];

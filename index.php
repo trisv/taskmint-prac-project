@@ -1,14 +1,16 @@
 <?php
 session_start();
+//require necessary files
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/task.class.php';
+//create database connection
 $conn = new Database;
-
+//check if user logged in
 if(!userLoggedIn()){
   redirect('login.php');
 }
-
+//require header
  require 'header.php';
  
  ?>

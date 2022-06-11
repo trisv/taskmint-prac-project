@@ -1,12 +1,14 @@
 <?php
 
 session_start();
-//require 'db.php';
+//require necessary files
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/task.class.php';
+//create new database
 $conn = new Database;
-//check if logged in, otherwise go away
+
+//check if logged in, otherwise redirect
 if(!userLoggedIn()){
     redirect('login.php');
   }

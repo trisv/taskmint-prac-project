@@ -3,8 +3,10 @@
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/user.class.php';
+//create new database connection
 $conn = new Database;
 
+//if not logged in, redirect
 if(!userLoggedIn()){
     redirect('login.php');
   }
@@ -24,16 +26,16 @@ $user_pw_edit_instance = new users($conn->getDB());
 //set relevant variables for class 
 $user_pw_edit_instance->setU_ID($_SESSION['u_id']);
 $user_pw_edit_instance->setPassword(neutraliseInput($_POST['u_password']));
-//bit of debugging
-m($user_pw_edit_instance);
+
+
 //db query to fetch pw to compare POST password against 
 $password_query = 'SELECT u_password FROM users WHERE u_id = :u_id';
 $stmt = $conn->getDB()->prepare($password_query);
 $stmt->bindParam('u_id', $_SESSION['u_id']);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
-//little more debugging to ensure correct output from query
-m($result);
+
+
 //if no result, tell the user
 if(!$result) {
     echo "no result";

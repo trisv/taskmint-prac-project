@@ -1,11 +1,12 @@
 <?php
 session_start();
+//require necessary files
 require 'functions.php';
-
+//check if user logged in
 if(userLoggedIn()){
   redirect('index.php');
 }
-
+//require header
  require 'header.php';
  ?>
 </div>

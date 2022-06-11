@@ -3,8 +3,10 @@
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/task.class.php';
+//create database connection
 $conn = new Database;
 
+//check if logged in
 if(!userLoggedIn()){
     redirect('login.php');
   }
@@ -23,7 +25,7 @@ $task_edit_instance->setTaskID($_POST['task_id']);
 //set POST variables 
 $task_edit_instance->setTaskName(neutraliseInput($_POST['task_name']));
 $task_edit_instance->setTaskDetails(neutraliseInput($_POST['task_details']));
-m($task_edit_instance);
+
 //create variable to edit task
 $action_edit_task = $task_edit_instance->editTask();
 if(!$action_edit_task) {
@@ -31,5 +33,5 @@ if(!$action_edit_task) {
   //in professional setting, would redirect back to index.php if failed
   //redirect('index.php');
 }
-//m($action_edit_task);
+//if successful, redirect
 redirect('index.php');

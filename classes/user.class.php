@@ -10,6 +10,7 @@ class users {
     
     //creates a pdo instance to allow db to be passed to class through __construct function
     private $pdo;
+    
     //provides db connection to class
     function __construct($db){
         $this->pdo = $db;

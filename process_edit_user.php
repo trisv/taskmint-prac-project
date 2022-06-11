@@ -3,7 +3,9 @@
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/user.class.php';
+//create new database connection
 $conn = new Database;
+
 //check user logged in
 if(!userLoggedIn()){
     redirect('login.php');
@@ -20,14 +22,13 @@ $user_edit_instance = new users($conn->getDB());
 $user_edit_instance->setU_ID($_SESSION['u_id']);
 $user_edit_instance->setEmail(neutraliseInput($_POST['u_email']));
 $user_edit_instance->setUsername(neutraliseInput($_POST['u_username']));
-//debugging
-m($user_edit_instance);
+
 //create variable for editing the user
 $action_edit_user = $user_edit_instance->editUser();
 // if there's an issue, tell user
 if(!$action_edit_user) {
     echo 'edit failed';
 }
-//if successful, redirect
+//if successful, set updated session variable and redirect
 $_SESSION['username'] = $_POST['u_username'];
 redirect('index.php');

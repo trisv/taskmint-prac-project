@@ -1,9 +1,11 @@
 <?php 
 session_start();
+//require necessary functions
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/task.class.php';
 require './classes/comment.class.php';
+//create new database connection
 $conn = new Database;
 
 //check if logged in
@@ -16,25 +18,26 @@ if(!userLoggedIn()){
 
   }
 
+//require header
 require 'header.php';
 
+//create new tasks class instance
 $display_task = new tasks($conn->getDB());
 //set user id
 $display_task->setU_ID($_SESSION['u_id']);
 //set task id 
 $display_task->setTaskID($_GET['task_id']);
 
-
+//view task
 $display_task_info = $display_task->viewTaskSingle();
 
+//if no tasks, redirect
 if(!$display_task_info){
 
   die(redirect('index.php'));
 }
 
-
-
-
+//if successful, display tasks
     echo "<div class='task-container-row'>";
 
     echo "<div class='task-overview-container'>";
@@ -62,13 +65,16 @@ if(!$display_task_info){
     </form>
   </div>
   <?php 
+//create new comments class
 $display_comment = new comments($conn->getDB());
+//set properties
 $display_comment->setU_ID($_SESSION['u_id']);
 $display_comment->setTaskID($_GET['task_id']);
+//view comments
 $display_comment_info = $display_comment->viewComments();
 
 
-
+//display comments
 echo "<div class='display-comment-container'>";
 foreach($display_comment_info as $comment_info) {
 echo "<div class='display-comment-box'>";

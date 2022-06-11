@@ -2,15 +2,16 @@
 
 //start session
 session_start();
-
 //require relevant files
 require 'functions.php';
 require './classes/database.class.php';
 require './classes/user.class.php';
 require './classes/task.class.php';
+
 //instatiate database 
 $conn = new Database;
 
+//redirect if not logged in
 if(!userLoggedIn()){
     redirect('login.php');
   }

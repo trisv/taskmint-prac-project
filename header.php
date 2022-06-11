@@ -1,8 +1,3 @@
-<?php 
-//require 'db.php';
-//could require database class but not necessary as will probably get called somewhere lower on page
-?>
-
 <!DOCTYPE html>
 
 <html>
