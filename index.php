@@ -9,14 +9,14 @@ require './classes/task.class.php';
 $conn = new Database;
 
 //check if user logged in
-if(!userLoggedIn()){
+if (!userLoggedIn()) {
   redirect('login.php');
 }
 
 //require header
- require 'header.php';
- 
- ?>
+require 'header.php';
+
+?>
 
 <div class="main">
   <div class="row-1">
@@ -27,6 +27,18 @@ if(!userLoggedIn()){
         </div>
         <a class="edit-user-link" href='edit_user.php'>Edit User Details</a>
       </div>
+    </div>
+  </div>
+  <div class="row-2">
+    <div class="admin-col">
+      <div class="task-form-container">
+        <form class="task-form" action="process_task.php" method='POST'>
+          <h3>Add Tasks</h3>
+          <input type="text" name="task_name" placeholder="Enter task name" required autofocus>
+          <input type="text" name="task_details" placeholder="Enter task details" required>
+          <input type="submit" style="cursor:pointer;">
+        </form>
+      </div>
       <div>
         <form class="search-form" name="search" method="POST" action="process_search.php">
           <h4>Search Tasks</h4>
@@ -35,32 +47,23 @@ if(!userLoggedIn()){
         </form>
       </div>
     </div>
-  </div>
-  <div class="row-2">
-    <div class="task-form-container">
-      <form class="task-form" action="process_task.php" method='POST'>
-        <h3>Add Tasks</h3>
-        <input type="text" name="task_name" placeholder="Enter task name" required autofocus >
-        <input type="text" name="task_details" placeholder="Enter task details" required >
-        <input type="submit" style="cursor:pointer;">
-      </form>
-    </div>
+
     <div class="tasks-display-container" style="width:80%;">
-      <?php 
+      <?php
       //set new class instance 
       $tasks_list = new tasks($conn->getDB());
 
       //tell class who user is
       $tasks_list->setU_ID($_SESSION['u_id']);
-      
-        //echo tasks viewTasks method to view tasks in database
+
+      //echo tasks viewTasks method to view tasks in database
       $myTasks = $tasks_list->viewTasks();
       ?>
 
       <div class="task-display">
         <?php
-        if(!empty($myTasks)) {
-          foreach($myTasks as $task_item) {
+        if (!empty($myTasks)) {
+          foreach ($myTasks as $task_item) {
             echo "<div class='task-box'>";
             echo "<br>";
             echo "<strong>Task Name:</strong> " . "<br>" . "<a href='task.php?task_id=" . $task_item['task_id'] . "' class='display-task-name'>" . $task_item['task_name'] . '</a><br>';
@@ -72,10 +75,11 @@ if(!userLoggedIn()){
           echo "no Tasks";
         }
         ?>
-      
+
       </div>
     </div>
-  </div> 
+
+  </div>
 </div>
 
 
