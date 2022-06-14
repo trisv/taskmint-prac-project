@@ -33,7 +33,7 @@ require 'header.php';
     <div class="admin-col">
       <div class="task-form-container">
         <form class="task-form" action="process_task.php" method='POST'>
-          <h3>Add Tasks</h3>
+          <h4>Add Tasks</h4>
           <input type="text" name="task_name" placeholder="Enter task name" required autofocus>
           <input type="text" name="task_details" placeholder="Enter task details" required>
           <input type="submit" style="cursor:pointer;">

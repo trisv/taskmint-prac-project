@@ -89,7 +89,7 @@ class users {
 
     function deleteUser() {
         //set task id to avoid notice issue
-        $user = $this->u_id();
+        $user = $this->getU_ID();
         $sql = $this->pdo->prepare('DELETE FROM users WHERE u_id = :u_id LIMIT 1');
         $sql->bindParam(':u_id', $_SESSION['u_id']);
         $sql->execute();

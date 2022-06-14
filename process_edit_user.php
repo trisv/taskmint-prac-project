@@ -30,5 +30,5 @@ if(!$action_edit_user) {
     echo 'edit failed';
 }
 //if successful, set updated session variable and redirect
-$_SESSION['username'] = $_POST['u_username'];
+$_SESSION['username'] = neutraliseInput($_POST['u_username']);
 redirect('index.php');

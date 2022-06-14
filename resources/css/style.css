@@ -247,7 +247,7 @@ form input[type="submit"]:hover {
 }
 
 .edit-user-link:hover {
-  background-color:white;
+  background-color:#2E86C1;
   color:#17202A;
 }
 
@@ -376,14 +376,14 @@ form input[type="submit"]:hover {
   display:flex;
   min-width:175px;
   min-height:175px;
-  padding:28px;
+  
 }
 
 .edit-task-form {
   display:flex;
   min-width:175px;
   min-height:175px;
-  padding:28px;
+  
   background-color:#fff;
 }
 
