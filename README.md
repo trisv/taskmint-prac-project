@@ -1,7 +1,7 @@
 # Taskmint Task Manager
 
 ## Project Overview
-Taskmint is essentially a basic task manager/tracker. 
+Taskmint is a basic task manager/tracker. 
 
 I began building Taskmint as part of teaching myself PHP and MySQL. It is still a work in progress. 
 
