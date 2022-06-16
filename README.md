@@ -13,7 +13,7 @@ It is also possible to add 'comments' to each task.
 It uses PDO to access the MySQL database.
 
 ## How to setup
-Taskmint can be run using XAMPP. To do this, set the project files in XAMPP's htdocs folder. 
+Taskmint can be run locally using XAMPP. To do this, set the project files in XAMPP's htdocs folder. 
 You will also need to download the database tables, which you can then import to phpMyadmin.
 
 ## How to use 
