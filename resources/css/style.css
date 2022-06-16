@@ -521,3 +521,11 @@ form input[type="submit"]:hover {
   width: 300px;
   box-shadow: none;
 }
+
+/* footer */
+
+.footer-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
