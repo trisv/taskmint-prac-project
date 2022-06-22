@@ -72,7 +72,7 @@ require 'header.php';
             echo "</div>";
           }
         } else {
-          echo "no Tasks";
+          echo "<strong>No Tasks. Why not add one?</strong>";
         }
         ?>
 
